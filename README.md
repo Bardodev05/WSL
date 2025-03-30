@@ -2,59 +2,57 @@
 
 ## 📌 Índice
 
-1. [Introducción](#introducción)
-2. [Requisitos](#requisitos)
-3. [Instalación de WSL y Ubuntu](#instalación-de-wsl-y-ubuntu)
-4. [Configuración de Ubuntu](#configuración-de-ubuntu)
-5. [Comandos y su uso](#comandos-y-su-uso)
-   - [🛡️ Gestión de Redes](#🛡️-gestión-de-redes)
-   - [💡 Gestión de Procesos y Memoria](#💡-gestión-de-procesos-y-memoria)
-   - [🔑 Gestión de Usuarios](#🔑-gestión-de-usuarios)
-   - [💾 Gestión de Archivos](#💾-gestión-de-archivos)
-6. [📄 Conclusión](#📄-conclusión)
+1. 📖 Introducción
+2. 🛠️ Requisitos
+3. 💻 Instalación de WSL y Ubuntu
+4. ⚙️ Configuración de Ubuntu
+5. 🖥️ Comandos y su uso
+   - 🌐 Gestión de Redes
+   - 🔄 Gestión de Procesos y Memoria
+   - 👥 Gestión de Usuarios
+   - 📂 Gestión de Archivos
+6. ✅ Conclusión
 
 ---
 
 ## 📖 Introducción
 
-Este documento proporciona una guía completa sobre cómo instalar y utilizar Ubuntu en Windows a través de WSL (Windows Subsystem for Linux). Además, se incluyen comandos útiles de Ubuntu con ejemplos prácticos para el manejo eficiente del sistema.
+Esta guía proporciona una descripción completa de cómo instalar y utilizar Ubuntu en Windows a través de WSL (Windows Subsystem for Linux). También se explican comandos esenciales de Ubuntu, su función y ejemplos de uso en tareas comunes.
 
 ---
 
-## ✅ Requisitos
+## 🛠️ Requisitos
 
-- Windows 10 (versión 1903 o superior) o Windows 11.
-- Conexión a Internet para descargar Ubuntu.
+🔹 Windows 10 (versión 1903 o superior) o Windows 11.
+🔹 Conexión a Internet para descargar Ubuntu.
 
 ---
 
-## 🔧 Instalación de WSL y Ubuntu
+## 💻 Instalación de WSL y Ubuntu
 
 ### 1️⃣ Instalar WSL
 
-Abre **PowerShell** como administrador y ejecuta:
+Abre PowerShell como administrador y ejecuta el siguiente comando:
 
-```sh
+```bash
 wsl --install
 ```
 
-Este comando habilitará WSL y descargará Ubuntu por defecto. **Requiere un reinicio del sistema**.
+🔹 Este comando habilitará WSL y descargará Ubuntu por defecto. Requiere reiniciar el sistema.
 
 ### 2️⃣ Instalar una versión específica de Ubuntu (opcional)
 
-1. Abre la **Microsoft Store**.
-2. Busca **"Ubuntu"**.
-3. Selecciona la versión deseada (ej. Ubuntu 20.04) y haz clic en **"Instalar"**.
+🔹 Abre la **Microsoft Store**, busca "Ubuntu" y selecciona la versión que prefieras (ej. Ubuntu 20.04). Luego, haz clic en "Instalar".
 
 ---
 
 ## ⚙️ Configuración de Ubuntu
 
-1. Busca **"Ubuntu"** en el menú de inicio y ábrelo.
-2. Configura tu **nombre de usuario** y **contraseña** cuando se te solicite.
-3. Actualiza Ubuntu ejecutando:
+1️⃣ Abre Ubuntu desde el menú de inicio.
+2️⃣ Configura un nombre de usuario y contraseña cuando se te solicite.
+3️⃣ Asegúrate de que Ubuntu esté actualizado ejecutando:
 
-```sh
+```bash
 sudo apt update && sudo apt upgrade
 ```
 
@@ -62,95 +60,119 @@ sudo apt update && sudo apt upgrade
 
 ## 🖥️ Comandos y su uso
 
-### 🛜 Gestión de Redes
+### 🌐 Gestión de Redes
 
-- **`ifconfig`** → Muestra la configuración de red.
-  ```sh
-  ifconfig
-  ```
+🔹 **ifconfig** - Muestra la configuración de red actual.
+```bash
+ifconfig
+```
+📌 Uso: Ver la dirección IP de tu máquina.
 
-- **`ping [dirección]`** → Verifica la conectividad a un servidor remoto.
-  ```sh
-  ping google.com
-  ```
+🔹 **ping [dirección]** - Verifica la conectividad con un servidor remoto.
+```bash
+ping google.com
+```
+📌 Uso: Comprobar si puedes conectarte a un sitio web.
 
-- **`ip a`** → Muestra interfaces de red disponibles y su estado.
-  ```sh
-  ip a
-  ```
-
----
-
-### 💡 Gestión de Procesos y Memoria
-
-- **`htop`** → Muestra la actividad del sistema en tiempo real.
-  ```sh
-  htop
-  ```
-
-- **`free -h`** → Muestra la memoria libre y usada.
-  ```sh
-  free -h
-  ```
-
-- **`ps aux`** → Lista los procesos en ejecución.
-  ```sh
-  ps aux
-  ```
+🔹 **ip a** - Muestra todas las interfaces de red y su estado.
+```bash
+ip a
+```
+📌 Uso: Revisar el estado de las conexiones de red.
 
 ---
 
-### 🔑 Gestión de Usuarios
+### 🔄 Gestión de Procesos y Memoria
 
-- **`sudo adduser [nombre]`** → Crea un nuevo usuario.
-  ```sh
-  sudo adduser nuevo_usuario
-  ```
+🔹 **htop** - Muestra información en tiempo real de los procesos.
+```bash
+htop
+```
+📌 Uso: Monitorear el uso de CPU y memoria.
 
-- **`sudo userdel [nombre]`** → Elimina un usuario.
-  ```sh
-  sudo userdel usuario_a_eliminar
-  ```
+🔹 **free -h** - Muestra la cantidad de memoria libre y usada.
+```bash
+free -h
+```
+📌 Uso: Ver cuánta memoria está disponible.
 
-- **`sudo addgroup [nombre]`** → Crea un nuevo grupo.
-  ```sh
-  sudo addgroup nuevo_grupo
-  ```
-
----
-
-### 💾 Gestión de Archivos
-
-- **`cd [directorio]`** → Cambia al directorio especificado.
-  ```sh
-  cd Documentos
-  ```
-
-- **`cp [origen] [destino]`** → Copia un archivo.
-  ```sh
-  cp archivo.txt copia_archivo.txt
-  ```
-
-- **`mv [origen] [destino]`** → Mueve o renombra un archivo.
-  ```sh
-  mv archivo.txt nuevo_nombre.txt
-  ```
-
-- **`rm [archivo]`** → Elimina un archivo.
-  ```sh
-  rm archivo.txt
-  ```
-
-⚠️ **Precaución**: La eliminación con `rm` es irreversible.
-
-- **Crear un directorio**
-  ```sh
-  mkdir nueva_carpeta
-  ```
+🔹 **ps aux** - Lista todos los procesos en ejecución.
+```bash
+ps aux
+```
+📌 Uso: Identificar procesos que consumen recursos.
 
 ---
 
-## 📄 Conclusión
+### 👥 Gestión de Usuarios
 
-Con esta guía, puedes instalar y configurar Ubuntu en WSL de manera eficiente. Además, ahora conoces comandos básicos para gestionar redes, procesos, usuarios y archivos. ¡Disfruta de tu experiencia con Linux en Windows! 🚀
+🔹 **adduser [nombre]** - Crea un nuevo usuario.
+```bash
+sudo adduser nuevo_usuario
+```
+📌 Uso: Agregar un usuario al sistema.
+
+🔹 **userdel [nombre]** - Elimina un usuario existente.
+```bash
+sudo userdel usuario
+```
+📌 Uso: Eliminar una cuenta innecesaria.
+
+🔹 **addgroup [nombre]** - Crea un nuevo grupo.
+```bash
+sudo addgroup nuevo_grupo
+```
+📌 Uso: Organizar usuarios en grupos.
+
+---
+
+### 📂 Gestión de Archivos
+
+🔹 **cd [directorio]** - Cambia al directorio especificado.
+```bash
+cd Documentos
+```
+📌 Uso: Navegar entre carpetas.
+
+🔹 **cp [origen] [destino]** - Copia un archivo o directorio.
+```bash
+cp archivo.txt copia_archivo.txt
+```
+📌 Uso: Crear una copia de seguridad de un archivo.
+
+🔹 **mv [origen] [destino]** - Mueve o renombra un archivo.
+```bash
+mv archivo.txt nuevo_nombre.txt
+```
+📌 Uso: Renombrar un archivo o moverlo de ubicación.
+
+🔹 **rm [archivo]** - Elimina un archivo.
+```bash
+rm archivo.txt
+```
+📌 Uso: Eliminar un archivo que ya no necesitas.
+
+🔹 **rmdir [directorio]** - Elimina un directorio vacío.
+```bash
+rmdir carpeta/
+```
+📌 Uso: Borrar carpetas sin contenido.
+
+🔹 **rm -r [directorio]** - Elimina un directorio y su contenido.
+```bash
+rm -r carpeta/
+```
+⚠️ ¡Cuidado! Esto borra todo dentro de la carpeta de forma permanente.
+
+🔹 **mkdir [nombre]** - Crea un nuevo directorio.
+```bash
+mkdir nueva_carpeta
+```
+📌 Uso: Crear una carpeta para organizar documentos.
+
+---
+
+## ✅ Conclusión
+
+Con esta guía, puedes instalar y configurar Ubuntu en WSL, además de utilizar los comandos esenciales para gestionar redes, procesos, usuarios y archivos. ¡Explora y domina Linux en tu sistema Windows! 🚀🐧
 
